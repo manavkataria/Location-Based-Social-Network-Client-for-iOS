@@ -30,12 +30,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor greenColor];
-    
-    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"favimg.jpg"]];
-    [imgView setContentMode:UIViewContentModeScaleAspectFill];
-    //[imgView setContentMode:UIViewContentModeTop];
-    imgView.frame = self.view.frame;
-    [self.view addSubview:imgView];
 }
 
 - (void)didReceiveMemoryWarning

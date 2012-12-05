@@ -31,6 +31,14 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor redColor];
+    
+    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"feedimg.jpg"]];
+    
+    [imgView setContentMode:UIViewContentModeScaleAspectFill];
+    //imgView.frame = self.view.frame;
+    imgView.frame = CGRectMake(20,20,100,100);
+    [self.view addSubview:imgView];
+
 }
 
 - (void)didReceiveMemoryWarning

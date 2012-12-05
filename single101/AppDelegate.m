@@ -25,7 +25,7 @@
     FavoritesViewController *favoritesViewController = [[FavoritesViewController alloc] init];
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    [tabBarController setViewControllers:@[feedViewController, favoritesViewController, profileViewController]];
+    [tabBarController setViewControllers:@[profileViewController, favoritesViewController, feedViewController]];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.viewController = [[ViewController alloc] init]; //Level 1-2 ViewController
