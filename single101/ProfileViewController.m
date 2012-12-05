@@ -7,6 +7,7 @@
 //
 
 #import "ProfileViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ProfileViewController ()
 
@@ -41,7 +42,7 @@
     int scrollViewHeight;
     int scrollViewWidth = 320;
     
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor lightTextColor];
     
     // ScrollView
     self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
@@ -57,7 +58,8 @@
     // Name
     y = y + imageYHeight + yGap;
     UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(x,y,xWidth,yHeight)];
-    nameLabel.backgroundColor = [UIColor clearColor];
+    //nameLabel.backgroundColor = [UIColor clearColor];
+    nameLabel.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2f];
     nameLabel.text = @"Name: Manav Kataria";
     [self.scrollView addSubview:nameLabel];
     
@@ -88,6 +90,11 @@
     self.scrollView.contentSize = CGSizeMake(scrollViewWidth,scrollViewHeight);
     
     [self.view addSubview:self.scrollView];
+    
+    //Impacts Performance!
+    self.view.layer.cornerRadius = 10;
+    self.scrollView.layer.cornerRadius = 10;
+    nameLabel.layer.cornerRadius = 10;
     
 }
 
