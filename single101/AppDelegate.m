@@ -7,11 +7,37 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "FeedViewController.h"
+#import "FavoritesViewController.h"
+#import "ProfileViewController.h"
+
+//@synthesize viewController;
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    CGRect viewRect = [[UIScreen mainScreen] bounds];
+    
+    FeedViewController *feedViewController = [[FeedViewController alloc] init];
+    ProfileViewController *profileViewController = [[ProfileViewController alloc] init];
+    FavoritesViewController *favoritesViewController = [[FavoritesViewController alloc] init];
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    [tabBarController setViewControllers:@[feedViewController, favoritesViewController, profileViewController]];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.viewController = [[ViewController alloc] init]; //Level 1-2 ViewController
+    
+    //self.window.rootViewController = self.viewController; //Level 1-2 ViewController
+    self.window.rootViewController = tabBarController;
+
+    [self.window makeKeyAndVisible];
+    
+    NSLog(@"Screen is %f tall and %f wide",
+          viewRect.size.height, viewRect.size.width);
+    
     // Override point for customization after application launch.
     return YES;
 }
