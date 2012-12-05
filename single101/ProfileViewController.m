@@ -41,6 +41,8 @@
     int scrollViewHeight;
     int scrollViewWidth = 320;
     
+    self.view.backgroundColor = [UIColor lightGrayColor];
+    
     // ScrollView
     self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     self.scrollView.autoresizingMask = (UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth);
@@ -55,18 +57,21 @@
     // Name
     y = y + imageYHeight + yGap;
     UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(x,y,xWidth,yHeight)];
+    nameLabel.backgroundColor = [UIColor clearColor];
     nameLabel.text = @"Name: Manav Kataria";
     [self.scrollView addSubview:nameLabel];
     
     // Location
     y = y + yHeight + yGap;
     UILabel *cityLabel = [[UILabel alloc] initWithFrame:CGRectMake(x,y,xWidth,yHeight)];
+    cityLabel.backgroundColor = [UIColor clearColor];
     cityLabel.text = @"From: India";
     [self.scrollView addSubview:cityLabel];
     
     // Age
     y = y + yHeight + yGap;
     UILabel *ageLabel = [[UILabel alloc] initWithFrame:CGRectMake(x,y,xWidth,yHeight)];
+    ageLabel.backgroundColor = [UIColor clearColor];
     ageLabel.text = @"Age: Almost 29";
     [self.scrollView addSubview:ageLabel];
     
