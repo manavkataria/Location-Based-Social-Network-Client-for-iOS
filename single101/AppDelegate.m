@@ -24,22 +24,20 @@
     ProfileViewController *profileViewController = [[ProfileViewController alloc] init];
     FavoritesViewController *favoritesViewController = [[FavoritesViewController alloc] init];
 
-#if TABBAR_CONTROLLER
+    UINavigationController *profileNavController = [[UINavigationController alloc] initWithRootViewController:profileViewController];
+    UINavigationController *feedNavController = [[UINavigationController alloc] initWithRootViewController:feedViewController];
+    UINavigationController *favoritesNavController = [[UINavigationController alloc] initWithRootViewController:favoritesViewController];
+
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    [tabBarController setViewControllers:@[profileViewController, favoritesViewController, feedViewController]];
-#else
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:profileViewController];
-#endif
+    [tabBarController setViewControllers:@[profileNavController, favoritesNavController, feedNavController]];
     
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.viewController = [[ViewController alloc] init]; //Level 1-2 ViewController
+    self.viewController = [[ViewController alloc] init];
     
-#if TABBAR_CONTROLLER
-    //self.window.rootViewController = self.viewController; //Level 1-2 ViewController
+    //self.window.rootViewController = self.viewController;
+    //self.window.rootViewController = navController;
     self.window.rootViewController = tabBarController;
-#else
-    self.window.rootViewController = navController;
-#endif
     
     
     [self.window makeKeyAndVisible];

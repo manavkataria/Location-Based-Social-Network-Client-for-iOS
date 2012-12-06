@@ -37,13 +37,13 @@
     int xWidth = 280;
     int yHeight = 40;
     int yGap = 20;
-    int bioHeight = 172;
+    int bioHeight = yHeight;
     int imageXWidth = 50;
     int imageYHeight = 50;
     int scrollViewHeight;
     int scrollViewWidth = 320;
     
-    self.view.backgroundColor = [UIColor lightTextColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     // ScrollView
     self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
