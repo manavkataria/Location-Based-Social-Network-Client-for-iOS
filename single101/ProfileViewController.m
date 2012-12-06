@@ -8,6 +8,7 @@
 
 #import "ProfileViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "FavoritesViewController.h"
 
 @interface ProfileViewController ()
 
@@ -47,13 +48,25 @@
     // ScrollView
     self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     self.scrollView.autoresizingMask = (UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth);
+
+    // Fetch Image Data
+    NSData *mydata = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://profile.ak.fbcdn.net/hprofile-ak-snc6/275717_100001091555213_134283289_t.jpg"]];
     
-    // Profile Image
-    NSData *mydata = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://graph.facebook.com/100004779815180/picture?type=square"]];
+#ifdef PLAIN_IMAGE_NO_BUTTON
+    // Profile Image (No Button)
     UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageWithData:mydata]];
     [imgView setContentMode:UIViewContentModeScaleAspectFill];
     imgView.frame = CGRectMake(x,y,imageXWidth,imageYHeight);
     [self.scrollView addSubview:imgView];
+#else
+    // Profile Image Button
+    UIButton *profileThumbnail = [UIButton buttonWithType:UIButtonTypeCustom];
+    [profileThumbnail setImage:[UIImage imageWithData:mydata] forState:UIControlStateNormal];
+    //[profileThumbnail setImage:[UIImage imageWithData:mydata] forState:UIControlStateHighlighted];
+    [profileThumbnail setFrame:CGRectMake(x,y,imageXWidth,imageYHeight)];
+    [profileThumbnail addTarget:self action:@selector(showZoomedPicture:) forControlEvents:UIControlEventTouchUpInside];
+    [self.scrollView addSubview:profileThumbnail];
+#endif
     
     // Name
     y = y + imageYHeight + yGap;
@@ -85,16 +98,56 @@
     biography.text = @"Hacker, Mentor, Startup Evangelist ...";
     [self.scrollView addSubview:biography];
     
-    scrollViewHeight = y + bioHeight + yGap;
+    // Chat
+    y = y + bioHeight + yGap;
+    UIButton *chatButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    chatButton.frame = CGRectMake(x, y, xWidth, yHeight);
+    [chatButton setTitle:@"Chat" forState:UIControlStateNormal];
+    [self.scrollView addSubview:chatButton];
+    [chatButton addTarget:self action:@selector(showChat:) forControlEvents:UIControlEventTouchUpInside];
+    
+    // Add Scroll View to self.view
+    scrollViewHeight = y + yHeight + yGap;
     NSLog(@"Scroll Height: %d", scrollViewHeight);
     self.scrollView.contentSize = CGSizeMake(scrollViewWidth,scrollViewHeight);
-    
     [self.view addSubview:self.scrollView];
     
-    //Impacts Performance!
+}
+
+// TODO: Define in header?
+- (void)showZoomedPicture:(UIButton *)sender
+{
+    UIViewController *profilePicZoomed = [[UIViewController alloc] init];
+    profilePicZoomed.view.frame = self.view.frame;
+    profilePicZoomed.title = @"Profile Pic";
+    //FIXME: Fetch Name of Person as Title ^
+    
+    NSData *mydata = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://profile.ak.fbcdn.net/hprofile-ak-snc6/275717_100001091555213_134283289_n.jpg"]];
+    UIImageView *profilePicView = [[UIImageView alloc]
+                               initWithImage:[UIImage imageWithData:mydata]];
+    [profilePicView setContentMode:UIViewContentModeScaleAspectFit];
+    profilePicView.frame = profilePicZoomed.view.frame;
+    [profilePicZoomed.view addSubview:profilePicView];
+    
+    [self.navigationController pushViewController:profilePicZoomed animated:YES];
+}
+     
+// TODO: Define in Header?
+- (void)showChat:(UIButton *)sender
+{
+    NSLog(@"showChat");
+    // TODO: Change to Chat View Controller.
+    FavoritesViewController *favVC = [[FavoritesViewController alloc] init];
+    [self.navigationController pushViewController:favVC animated:YES];
+}
+
+// TODO: Define in header? Rounded Rectangle - Impacts Performance!
+- (void)enableRoundedRects
+{
     self.view.layer.cornerRadius = 10;
     self.scrollView.layer.cornerRadius = 10;
-    nameLabel.layer.cornerRadius = 10;
+    // Needs nameLabel reference from view did load
+    //nameLabel.layer.cornerRadius = 10;
     
 }
 

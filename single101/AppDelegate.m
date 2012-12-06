@@ -23,16 +23,25 @@
     FeedViewController *feedViewController = [[FeedViewController alloc] init];
     ProfileViewController *profileViewController = [[ProfileViewController alloc] init];
     FavoritesViewController *favoritesViewController = [[FavoritesViewController alloc] init];
-    
+
+#if TABBAR_CONTROLLER
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     [tabBarController setViewControllers:@[profileViewController, favoritesViewController, feedViewController]];
+#else
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:profileViewController];
+#endif
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.viewController = [[ViewController alloc] init]; //Level 1-2 ViewController
     
+#if TABBAR_CONTROLLER
     //self.window.rootViewController = self.viewController; //Level 1-2 ViewController
     self.window.rootViewController = tabBarController;
-
+#else
+    self.window.rootViewController = navController;
+#endif
+    
+    
     [self.window makeKeyAndVisible];
     
     NSLog(@"Screen is %f tall and %f wide",
