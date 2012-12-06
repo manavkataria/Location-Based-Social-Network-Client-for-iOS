@@ -31,6 +31,7 @@
 		47513CF0166E3E7300C0E52B /* tab_icon_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 47513CEF166E3E7300C0E52B /* tab_icon_profile.png */; };
 		47513CF2166E3ECF00C0E52B /* tab_icon_feed.png in Resources */ = {isa = PBXBuildFile; fileRef = 47513CF1166E3ECF00C0E52B /* tab_icon_feed.png */; };
 		47513CF4166E417000C0E52B /* feedimg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 47513CF3166E417000C0E52B /* feedimg.jpg */; };
+		47D2D1BC167094FD009CBDCE /* FeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D2D1BB167094FD009CBDCE /* FeedTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		47513CEF166E3E7300C0E52B /* tab_icon_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_icon_profile.png; sourceTree = "<group>"; };
 		47513CF1166E3ECF00C0E52B /* tab_icon_feed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_icon_feed.png; sourceTree = "<group>"; };
 		47513CF3166E417000C0E52B /* feedimg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = feedimg.jpg; sourceTree = "<group>"; };
+		47D2D1BA167094FC009CBDCE /* FeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedTableViewController.h; sourceTree = "<group>"; };
+		47D2D1BB167094FD009CBDCE /* FeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +145,8 @@
 				474392BA166CFCBD00CDBCF7 /* AppDelegate.m */,
 				47513CE5166E39F900C0E52B /* ProfileViewController.h */,
 				47513CE6166E39F900C0E52B /* ProfileViewController.m */,
+				47D2D1BA167094FC009CBDCE /* FeedTableViewController.h */,
+				47D2D1BB167094FD009CBDCE /* FeedTableViewController.m */,
 				47513CDF166E378E00C0E52B /* FeedViewController.h */,
 				47513CE0166E378E00C0E52B /* FeedViewController.m */,
 				474392C2166CFCBD00CDBCF7 /* MainStoryboard_iPhone.storyboard */,
@@ -311,6 +316,7 @@
 				47513CE1166E378E00C0E52B /* FeedViewController.m in Sources */,
 				47513CE4166E39E200C0E52B /* FavoritesViewController.m in Sources */,
 				47513CE7166E39F900C0E52B /* ProfileViewController.m in Sources */,
+				47D2D1BC167094FD009CBDCE /* FeedTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
