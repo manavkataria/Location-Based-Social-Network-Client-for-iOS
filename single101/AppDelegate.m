@@ -18,12 +18,21 @@
 #import "FavoritesViewController.h"
 #import "ProfileViewController.h"
 
-//@synthesize viewController;
+
+void uncaughtExceptionHandler(NSException *exception) {
+    NSLog(@"CRASH: %@", exception);
+    NSLog(@"Stack Trace: %@", [exception callStackSymbols]);
+    // Internal error reporting
+}
+
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //Use Exception Handler to Throw a Better Stack Trace.
+    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+    
     CGRect viewRect = [[UIScreen mainScreen] bounds];
 
 #ifdef BASIC_FEED_VIEW_CONTROLLER

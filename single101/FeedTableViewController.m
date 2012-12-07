@@ -7,6 +7,9 @@
 //
 
 #import "FeedTableViewController.h"
+#import "AFJSONRequestOperation.h"
+#import "UIImageView+AFNetworking.h"
+#import "ProfileViewController.h"
 
 @interface FeedTableViewController ()
 
@@ -28,6 +31,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self fetchUsers];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -53,7 +58,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 5;
+    return self.users.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -64,9 +69,12 @@
     
     // Configure the cell...
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    cell.text = @"Manav";
+ 
+    cell.textLabel.text = self.users[indexPath.row][@"name"];
+    cell.detailTextLabel.text = self.users[indexPath.row][@"location"];
+    [cell.imageView setImageWithURL:[NSURL URLWithString:self.users[indexPath.row][@"image"]] placeholderImage:[UIImage imageNamed:@"placeholder_t.gif"]];
     
     return cell;
 }
@@ -115,12 +123,31 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    ProfileViewController *detailViewController = [[ProfileViewController alloc] init];
+    
+    detailViewController.userProfile = self.users[indexPath.row];
+    [detailViewController renderUserProfile];
+
+    // Pass the selected object to the new view controller.
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    
 }
+
+- (void)fetchUsers
+{
+    NSURL *url = [[NSURL alloc] initWithString:@"http://enigmatic-refuge-9085.herokuapp.com/users.json"];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        //NSLog(@"Fetched Feed JSON: %@",JSON);
+        self.users = JSON;
+        [self.tableView reloadData]; // this is necessary, because by the time this runs, tableView:numberOfRowsInSection has already executed
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"NSError: %@",[error localizedDescription]);
+    }];
+    
+    [operation start];
+}
+
 
 @end

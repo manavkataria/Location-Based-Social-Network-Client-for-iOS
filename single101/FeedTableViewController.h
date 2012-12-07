@@ -10,4 +10,6 @@
 
 @interface FeedTableViewController : UITableViewController
 
+@property (strong,nonatomic) NSArray *users;
+
 @end
