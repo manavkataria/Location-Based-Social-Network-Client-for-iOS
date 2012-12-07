@@ -14,5 +14,5 @@
 @property (strong, nonatomic) NSDictionary *userProfile;
 
 - (void) renderUserProfile;
-
+- (NSInteger) birthdayStringToAge:(NSString *) dateString;
 @end

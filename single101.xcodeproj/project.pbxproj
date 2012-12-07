@@ -18,7 +18,6 @@
 		474392C1166CFCBD00CDBCF7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 474392C0166CFCBD00CDBCF7 /* Default-568h@2x.png */; };
 		474392C4166CFCBD00CDBCF7 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 474392C2166CFCBD00CDBCF7 /* MainStoryboard_iPhone.storyboard */; };
 		474392C7166CFCBD00CDBCF7 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 474392C5166CFCBD00CDBCF7 /* MainStoryboard_iPad.storyboard */; };
-		474392CA166CFCBD00CDBCF7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 474392C9166CFCBD00CDBCF7 /* ViewController.m */; };
 		474392D2166CFCBD00CDBCF7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474392D1166CFCBD00CDBCF7 /* SenTestingKit.framework */; };
 		474392D3166CFCBD00CDBCF7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474392AA166CFCBD00CDBCF7 /* UIKit.framework */; };
 		474392D4166CFCBD00CDBCF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474392AC166CFCBD00CDBCF7 /* Foundation.framework */; };
@@ -26,7 +25,6 @@
 		474392DF166CFCBD00CDBCF7 /* single101Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 474392DE166CFCBD00CDBCF7 /* single101Tests.m */; };
 		47513CE7166E39F900C0E52B /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47513CE6166E39F900C0E52B /* ProfileViewController.m */; };
 		47513CF0166E3E7300C0E52B /* tab_icon_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 47513CEF166E3E7300C0E52B /* tab_icon_profile.png */; };
-		47513CF4166E417000C0E52B /* feedimg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 47513CF3166E417000C0E52B /* feedimg.jpg */; };
 		47D2D1BC167094FD009CBDCE /* FeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D2D1BB167094FD009CBDCE /* FeedTableViewController.m */; };
 		47D2D1D11670FB20009CBDCE /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D2D1BF1670FB20009CBDCE /* AFHTTPClient.m */; };
 		47D2D1D21670FB20009CBDCE /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D2D1C11670FB20009CBDCE /* AFHTTPRequestOperation.m */; };
@@ -73,8 +71,6 @@
 		474392C0166CFCBD00CDBCF7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		474392C3166CFCBD00CDBCF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		474392C6166CFCBD00CDBCF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		474392C8166CFCBD00CDBCF7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		474392C9166CFCBD00CDBCF7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		474392D0166CFCBD00CDBCF7 /* single101Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = single101Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		474392D1166CFCBD00CDBCF7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		474392D9166CFCBD00CDBCF7 /* single101Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "single101Tests-Info.plist"; sourceTree = "<group>"; };
@@ -84,7 +80,6 @@
 		47513CE5166E39F900C0E52B /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		47513CE6166E39F900C0E52B /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		47513CEF166E3E7300C0E52B /* tab_icon_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_icon_profile.png; sourceTree = "<group>"; };
-		47513CF3166E417000C0E52B /* feedimg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = feedimg.jpg; sourceTree = "<group>"; };
 		47D2D1BA167094FC009CBDCE /* FeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedTableViewController.h; sourceTree = "<group>"; };
 		47D2D1BB167094FD009CBDCE /* FeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedTableViewController.m; sourceTree = "<group>"; };
 		47D2D1BE1670FB20009CBDCE /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
@@ -179,20 +174,17 @@
 				47513CE6166E39F900C0E52B /* ProfileViewController.m */,
 				47D2D1BA167094FC009CBDCE /* FeedTableViewController.h */,
 				47D2D1BB167094FD009CBDCE /* FeedTableViewController.m */,
-				474392C8166CFCBD00CDBCF7 /* ViewController.h */,
-				474392C9166CFCBD00CDBCF7 /* ViewController.m */,
-				474392C2166CFCBD00CDBCF7 /* MainStoryboard_iPhone.storyboard */,
-				474392C5166CFCBD00CDBCF7 /* MainStoryboard_iPad.storyboard */,
 				47D2D1DA16710A0A009CBDCE /* placeholder_t.gif */,
 				47D2D1EA1671FBA9009CBDCE /* placeholder_full.jpg */,
 				47D2D1E01671FADA009CBDCE /* 01-refresh.png */,
 				47D2D1E11671FADA009CBDCE /* 02-redo.png */,
 				47D2D1E21671FADB009CBDCE /* 07-map-marker.png */,
 				47D2D1E41671FADB009CBDCE /* 193-location-arrow.png */,
-				47513CF3166E417000C0E52B /* feedimg.jpg */,
 				47D2D1E31671FADB009CBDCE /* tab_icon_group.png */,
 				47D2D1DE1671FA57009CBDCE /* tab_icon_chat.png */,
 				47513CEF166E3E7300C0E52B /* tab_icon_profile.png */,
+				474392C2166CFCBD00CDBCF7 /* MainStoryboard_iPhone.storyboard */,
+				474392C5166CFCBD00CDBCF7 /* MainStoryboard_iPad.storyboard */,
 				47D2D1BD1670FB20009CBDCE /* AFNetworking */,
 				474392B1166CFCBD00CDBCF7 /* Supporting Files */,
 			);
@@ -336,7 +328,6 @@
 				474392C4166CFCBD00CDBCF7 /* MainStoryboard_iPhone.storyboard in Resources */,
 				474392C7166CFCBD00CDBCF7 /* MainStoryboard_iPad.storyboard in Resources */,
 				47513CF0166E3E7300C0E52B /* tab_icon_profile.png in Resources */,
-				47513CF4166E417000C0E52B /* feedimg.jpg in Resources */,
 				47D2D1DB16710A0A009CBDCE /* placeholder_t.gif in Resources */,
 				47D2D1DF1671FA57009CBDCE /* tab_icon_chat.png in Resources */,
 				47D2D1E51671FADC009CBDCE /* 01-refresh.png in Resources */,
@@ -381,7 +372,6 @@
 			files = (
 				474392B7166CFCBD00CDBCF7 /* main.m in Sources */,
 				474392BB166CFCBD00CDBCF7 /* AppDelegate.m in Sources */,
-				474392CA166CFCBD00CDBCF7 /* ViewController.m in Sources */,
 				47513CE7166E39F900C0E52B /* ProfileViewController.m in Sources */,
 				47D2D1BC167094FD009CBDCE /* FeedTableViewController.m in Sources */,
 				47D2D1D11670FB20009CBDCE /* AFHTTPClient.m in Sources */,

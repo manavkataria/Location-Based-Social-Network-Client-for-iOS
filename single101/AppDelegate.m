@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
 #import "FeedTableViewController.h"
 #import "ProfileViewController.h"
 
@@ -26,8 +25,6 @@ void uncaughtExceptionHandler(NSException *exception) {
     //Use Exception Handler to Throw a Better Stack Trace.
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
     
-    CGRect viewRect = [[UIScreen mainScreen] bounds];
-
     FeedTableViewController *feedTableViewController = [[FeedTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     UINavigationController *feedNavController = [[UINavigationController alloc] initWithRootViewController:feedTableViewController];
     
@@ -37,19 +34,12 @@ void uncaughtExceptionHandler(NSException *exception) {
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     [tabBarController setViewControllers:@[feedNavController]];
     
-
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.viewController = [[ViewController alloc] init];
-    
-    //self.window.rootViewController = self.viewController;
-    //self.window.rootViewController = navController;
     self.window.rootViewController = tabBarController;
-    
-    
     [self.window makeKeyAndVisible];
     
-    NSLog(@"Screen is %f tall and %f wide",
-          viewRect.size.height, viewRect.size.width);
+    //CGRect viewRect = [[UIScreen mainScreen] bounds];
+    //NSLog(@"Screen is %f tall and %f wide", viewRect.size.height, viewRect.size.width);
     
     // Override point for customization after application launch.
     return YES;
