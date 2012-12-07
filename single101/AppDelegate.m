@@ -8,14 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-
-#ifdef BASIC_FEED_VIEW_CONTROLLER
-#import "FeedViewController.h"
-#else
 #import "FeedTableViewController.h"
-#endif
-
-#import "FavoritesViewController.h"
 #import "ProfileViewController.h"
 
 
@@ -35,26 +28,14 @@ void uncaughtExceptionHandler(NSException *exception) {
     
     CGRect viewRect = [[UIScreen mainScreen] bounds];
 
-#ifdef BASIC_FEED_VIEW_CONTROLLER
-    FeedViewController *feedViewController = [[FeedViewController alloc] init];
-#else
     FeedTableViewController *feedTableViewController = [[FeedTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
-#endif
-    ProfileViewController *profileViewController = [[ProfileViewController alloc] init];
-    FavoritesViewController *favoritesViewController = [[FavoritesViewController alloc] init];
-
-
-#ifdef BASIC_FEED_VIEW_CONTROLLER
-    UINavigationController *feedNavController = [[UINavigationController alloc] initWithRootViewController:feedViewController];
-#else
     UINavigationController *feedNavController = [[UINavigationController alloc] initWithRootViewController:feedTableViewController];
-#endif
     
-    UINavigationController *favoritesNavController = [[UINavigationController alloc] initWithRootViewController:favoritesViewController];
-    UINavigationController *profileNavController = [[UINavigationController alloc] initWithRootViewController:profileViewController];
+    //ProfileViewController *profileViewController = [[ProfileViewController alloc] init];
+    //UINavigationController *profileNavController = [[UINavigationController alloc] initWithRootViewController:profileViewController];
 
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    [tabBarController setViewControllers:@[profileNavController, favoritesNavController, feedNavController]];
+    [tabBarController setViewControllers:@[feedNavController]];
     
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

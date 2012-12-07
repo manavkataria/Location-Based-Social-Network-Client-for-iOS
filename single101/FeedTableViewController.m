@@ -23,7 +23,7 @@
     if (self) {
         // Custom initialization
         self.title = @"Feed";
-        self.tabBarItem.image = [UIImage imageNamed:@"tab_icon_feed"];
+        self.tabBarItem.image = [UIImage imageNamed:@"tab_icon_group"];
     }
     return self;
 }
@@ -71,9 +71,17 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
- 
+    
+    NSLog(@"UserProfile: %@",self.users[indexPath.row]);
     cell.textLabel.text = self.users[indexPath.row][@"name"];
-    cell.detailTextLabel.text = self.users[indexPath.row][@"location"];
+    
+    if (![self.users[indexPath.row][@"location"] isKindOfClass:[NSNull class]]) {
+        cell.detailTextLabel.text = self.users[indexPath.row][@"location"];
+    } else {
+        NSLog(@"Null Location: %@",self.users[indexPath.row][@"location"]);
+        cell.detailTextLabel.text = @"";
+    }
+    
     [cell.imageView setImageWithURL:[NSURL URLWithString:self.users[indexPath.row][@"image"]] placeholderImage:[UIImage imageNamed:@"placeholder_t.gif"]];
     
     return cell;
@@ -123,13 +131,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    ProfileViewController *detailViewController = [[ProfileViewController alloc] init];
     
-    detailViewController.userProfile = self.users[indexPath.row];
-    [detailViewController renderUserProfile];
+    ProfileViewController *profileViewController = [[ProfileViewController alloc] init];
+    
+    profileViewController.userProfile = self.users[indexPath.row];
+    [profileViewController renderUserProfile];
 
     // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    [self.navigationController pushViewController:profileViewController animated:YES];
     
 }
 
