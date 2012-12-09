@@ -144,7 +144,7 @@
 
 - (void)fetchUsers
 {
-    NSURL *url = [[NSURL alloc] initWithString:@"http://enigmatic-refuge-9085.herokuapp.com/users.json"];
+    NSURL *url = [[NSURL alloc] initWithString:@"http://talklocaldev.herokuapp.com/users.json"];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {

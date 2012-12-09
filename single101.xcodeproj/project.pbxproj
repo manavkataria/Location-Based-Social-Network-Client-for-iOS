@@ -56,7 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		474392A6166CFCBD00CDBCF7 /* single101.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = single101.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		474392A6166CFCBD00CDBCF7 /* TalkLocalDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkLocalDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		474392AA166CFCBD00CDBCF7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		474392AC166CFCBD00CDBCF7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		474392AE166CFCBD00CDBCF7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -148,7 +148,7 @@
 		474392A7166CFCBD00CDBCF7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				474392A6166CFCBD00CDBCF7 /* single101.app */,
+				474392A6166CFCBD00CDBCF7 /* TalkLocalDev.app */,
 				474392D0166CFCBD00CDBCF7 /* single101Tests.octest */,
 			);
 			name = Products;
@@ -253,9 +253,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		474392A5166CFCBC00CDBCF7 /* single101 */ = {
+		474392A5166CFCBC00CDBCF7 /* TalkLocalDev */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 474392E2166CFCBD00CDBCF7 /* Build configuration list for PBXNativeTarget "single101" */;
+			buildConfigurationList = 474392E2166CFCBD00CDBCF7 /* Build configuration list for PBXNativeTarget "TalkLocalDev" */;
 			buildPhases = (
 				474392A2166CFCBC00CDBCF7 /* Sources */,
 				474392A3166CFCBC00CDBCF7 /* Frameworks */,
@@ -265,9 +265,9 @@
 			);
 			dependencies = (
 			);
-			name = single101;
+			name = TalkLocalDev;
 			productName = single101;
-			productReference = 474392A6166CFCBD00CDBCF7 /* single101.app */;
+			productReference = 474392A6166CFCBD00CDBCF7 /* TalkLocalDev.app */;
 			productType = "com.apple.product-type.application";
 		};
 		474392CF166CFCBD00CDBCF7 /* single101Tests */ = {
@@ -310,7 +310,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				474392A5166CFCBC00CDBCF7 /* single101 */,
+				474392A5166CFCBC00CDBCF7 /* TalkLocalDev */,
 				474392CF166CFCBD00CDBCF7 /* single101Tests */,
 			);
 		};
@@ -399,7 +399,7 @@
 /* Begin PBXTargetDependency section */
 		474392D6166CFCBD00CDBCF7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 474392A5166CFCBC00CDBCF7 /* single101 */;
+			target = 474392A5166CFCBC00CDBCF7 /* TalkLocalDev */;
 			targetProxy = 474392D5166CFCBD00CDBCF7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -495,10 +495,13 @@
 		474392E3166CFCBD00CDBCF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "single101/single101-Prefix.pch";
 				INFOPLIST_FILE = "single101/single101-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -506,10 +509,15 @@
 		474392E4166CFCBD00CDBCF7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "single101/single101-Prefix.pch";
 				INFOPLIST_FILE = "single101/single101-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -560,7 +568,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		474392E2166CFCBD00CDBCF7 /* Build configuration list for PBXNativeTarget "single101" */ = {
+		474392E2166CFCBD00CDBCF7 /* Build configuration list for PBXNativeTarget "TalkLocalDev" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				474392E3166CFCBD00CDBCF7 /* Debug */,
