@@ -10,13 +10,11 @@
 #import "FeedTableViewController.h"
 #import "ProfileViewController.h"
 
-
 void uncaughtExceptionHandler(NSException *exception) {
     NSLog(@"CRASH: %@", exception);
     NSLog(@"Stack Trace: %@", [exception callStackSymbols]);
     // Internal error reporting
 }
-
 
 @implementation AppDelegate
 
@@ -37,9 +35,6 @@ void uncaughtExceptionHandler(NSException *exception) {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
-    
-    //CGRect viewRect = [[UIScreen mainScreen] bounds];
-    //NSLog(@"Screen is %f tall and %f wide", viewRect.size.height, viewRect.size.width);
     
     // Override point for customization after application launch.
     return YES;

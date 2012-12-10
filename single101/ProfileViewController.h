@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) UIScrollView *scrollView;
 @property (strong, nonatomic) NSDictionary *userProfile;
+@property (nonatomic) double userDistance;
 
 - (void) renderUserProfile;
 - (NSInteger) birthdayStringToAge:(NSString *) dateString;

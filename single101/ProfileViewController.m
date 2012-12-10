@@ -32,13 +32,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    //[self renderHardcodedProfile];
-    //[self renderUserProfile];
 }
 
 - (NSInteger) birthdayStringToAge:(NSString *)dateString
 {
-    //NSString *dateString = @"01-02-2010";
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM/dd/yyyy"];
     NSDate *dateFromString = [[NSDate alloc] init];
@@ -61,8 +58,8 @@
 {
     int x = 20;
     int y = 280;
-    int xWidth = 180;
-    int yHeight = 50;
+    int xWidth = 220;
+    int yHeight = 70;
     int yGap = 20;
     int scrollViewHeight;
     int scrollViewWidth = 320;
@@ -96,22 +93,27 @@
     profilePicView.frame = self.scrollView.frame;
     [self.scrollView addSubview:profilePicView];
     
-    // City + Age
-    UILabel *cityAgeLabel = [[UILabel alloc] initWithFrame:CGRectMake(x,y,xWidth,yHeight)];
-    cityAgeLabel.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
-    cityAgeLabel.numberOfLines = 0;
+    // City + Age + Distance
+    UILabel *description = [[UILabel alloc] initWithFrame:CGRectMake(x,y,xWidth,yHeight)];
+    description.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+    description.numberOfLines = 0;
     
     if (![self.userProfile[@"location"] isKindOfClass:[NSNull class]]) {
-        NSString *cityAgeText = [NSString stringWithFormat:@"%@\n%d years", self.userProfile[@"location"], [self birthdayStringToAge:self.userProfile[@"birthday"]]];
-        cityAgeLabel.text = cityAgeText;
-        NSLog(@"cityAgeText: %@",cityAgeText);
+        NSString *descText = [NSString stringWithFormat:@" %@\n %d years\n %d meters away",
+                                 self.userProfile[@"location"],
+                                 [self birthdayStringToAge:self.userProfile[@"birthday"]],
+                                 (int) self.userDistance];
+        description.text = descText;
+        NSLog(@"cityAgeText: %@",descText);
     } else {
         NSLog(@"Null Location: %@",self.userProfile[@"location"]);
-        NSString *cityAgeText = [NSString stringWithFormat:@"%d years", [self birthdayStringToAge:self.userProfile[@"birthday"]]];
-        cityAgeLabel.text = cityAgeText;
+        NSString *descText = [NSString stringWithFormat:@" %d years\n %d meters away",
+                                 [self birthdayStringToAge:self.userProfile[@"birthday"]],
+                                 (int) self.userDistance];
+        description.text = descText;
     }
     
-    [self.scrollView addSubview:cityAgeLabel];
+    [self.scrollView addSubview:description];
 
 #if BIO
     // Bio
@@ -155,7 +157,7 @@
     
     self.view.layer.cornerRadius = 10;
     self.scrollView.layer.cornerRadius = 10;
-    cityAgeLabel.layer.cornerRadius = 10;
+    description.layer.cornerRadius = 10;
 
 #if BIO
     biography.layer.cornerRadius = 10;
@@ -178,6 +180,14 @@
     [self.navigationController pushViewController:profilePicZoomed animated:YES];
 }
 
+- (void)showLocation
+{
+    //LocationViewController *locationViewController = [[LocationViewController alloc] init];
+    
+    // Pass the selected object to the new view controller.
+    //[self.navigationController pushViewController:locationViewController animated:YES];
+}
+
 - (void)showChat:(UIButton *)sender
 {
     NSLog(@"showChat");
@@ -191,9 +201,6 @@
 {
     self.view.layer.cornerRadius = 10;
     self.scrollView.layer.cornerRadius = 10;
-    // Needs nameLabel reference from view did load
-    //nameLabel.layer.cornerRadius = 10;
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -201,24 +208,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-#if Fetch_Json_From_Internet
-#import "PhotoViewController.h"
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    PhotoViewController *photoVC = [[PhotoViewController alloc] init];
-    
-    // Also finish these, setting the proper fileName and title
-    
-    photoVC.imageFileName = self.images[indexPath.row][@"filename"];
-    photoVC.imageTitle = self.images[indexPath.row][@"title"];
-    
-    [self.navigationController pushViewController:photoVC animated:YES];
-}
-#endif
 
 @end

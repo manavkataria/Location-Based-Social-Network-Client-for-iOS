@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4742610B1674981900919791 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4742610A1674981900919791 /* CoreLocation.framework */; };
+		4742610D16758E9600919791 /* Austin Home, Texas, USA.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 4742610C16758E9600919791 /* Austin Home, Texas, USA.gpx */; };
 		474392AB166CFCBD00CDBCF7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474392AA166CFCBD00CDBCF7 /* UIKit.framework */; };
 		474392AD166CFCBD00CDBCF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474392AC166CFCBD00CDBCF7 /* Foundation.framework */; };
 		474392AF166CFCBD00CDBCF7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474392AE166CFCBD00CDBCF7 /* CoreGraphics.framework */; };
@@ -17,7 +19,6 @@
 		474392BF166CFCBD00CDBCF7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 474392BE166CFCBD00CDBCF7 /* Default@2x.png */; };
 		474392C1166CFCBD00CDBCF7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 474392C0166CFCBD00CDBCF7 /* Default-568h@2x.png */; };
 		474392C4166CFCBD00CDBCF7 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 474392C2166CFCBD00CDBCF7 /* MainStoryboard_iPhone.storyboard */; };
-		474392C7166CFCBD00CDBCF7 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 474392C5166CFCBD00CDBCF7 /* MainStoryboard_iPad.storyboard */; };
 		474392D2166CFCBD00CDBCF7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474392D1166CFCBD00CDBCF7 /* SenTestingKit.framework */; };
 		474392D3166CFCBD00CDBCF7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474392AA166CFCBD00CDBCF7 /* UIKit.framework */; };
 		474392D4166CFCBD00CDBCF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474392AC166CFCBD00CDBCF7 /* Foundation.framework */; };
@@ -56,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4742610A1674981900919791 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4742610C16758E9600919791 /* Austin Home, Texas, USA.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Austin Home, Texas, USA.gpx"; sourceTree = "<group>"; };
 		474392A6166CFCBD00CDBCF7 /* TalkLocalDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkLocalDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		474392AA166CFCBD00CDBCF7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		474392AC166CFCBD00CDBCF7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -70,7 +73,6 @@
 		474392BE166CFCBD00CDBCF7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		474392C0166CFCBD00CDBCF7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		474392C3166CFCBD00CDBCF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		474392C6166CFCBD00CDBCF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		474392D0166CFCBD00CDBCF7 /* single101Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = single101Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		474392D1166CFCBD00CDBCF7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		474392D9166CFCBD00CDBCF7 /* single101Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "single101Tests-Info.plist"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4742610B1674981900919791 /* CoreLocation.framework in Frameworks */,
 				474392AB166CFCBD00CDBCF7 /* UIKit.framework in Frameworks */,
 				474392AD166CFCBD00CDBCF7 /* Foundation.framework in Frameworks */,
 				474392AF166CFCBD00CDBCF7 /* CoreGraphics.framework in Frameworks */,
@@ -157,6 +160,7 @@
 		474392A9166CFCBD00CDBCF7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4742610A1674981900919791 /* CoreLocation.framework */,
 				474392AA166CFCBD00CDBCF7 /* UIKit.framework */,
 				474392AC166CFCBD00CDBCF7 /* Foundation.framework */,
 				474392AE166CFCBD00CDBCF7 /* CoreGraphics.framework */,
@@ -170,10 +174,10 @@
 			children = (
 				474392B9166CFCBD00CDBCF7 /* AppDelegate.h */,
 				474392BA166CFCBD00CDBCF7 /* AppDelegate.m */,
-				47513CE5166E39F900C0E52B /* ProfileViewController.h */,
-				47513CE6166E39F900C0E52B /* ProfileViewController.m */,
 				47D2D1BA167094FC009CBDCE /* FeedTableViewController.h */,
 				47D2D1BB167094FD009CBDCE /* FeedTableViewController.m */,
+				47513CE5166E39F900C0E52B /* ProfileViewController.h */,
+				47513CE6166E39F900C0E52B /* ProfileViewController.m */,
 				47D2D1DA16710A0A009CBDCE /* placeholder_t.gif */,
 				47D2D1EA1671FBA9009CBDCE /* placeholder_full.jpg */,
 				47D2D1E01671FADA009CBDCE /* 01-refresh.png */,
@@ -184,7 +188,7 @@
 				47D2D1DE1671FA57009CBDCE /* tab_icon_chat.png */,
 				47513CEF166E3E7300C0E52B /* tab_icon_profile.png */,
 				474392C2166CFCBD00CDBCF7 /* MainStoryboard_iPhone.storyboard */,
-				474392C5166CFCBD00CDBCF7 /* MainStoryboard_iPad.storyboard */,
+				4742610C16758E9600919791 /* Austin Home, Texas, USA.gpx */,
 				47D2D1BD1670FB20009CBDCE /* AFNetworking */,
 				474392B1166CFCBD00CDBCF7 /* Supporting Files */,
 			);
@@ -326,7 +330,6 @@
 				474392BF166CFCBD00CDBCF7 /* Default@2x.png in Resources */,
 				474392C1166CFCBD00CDBCF7 /* Default-568h@2x.png in Resources */,
 				474392C4166CFCBD00CDBCF7 /* MainStoryboard_iPhone.storyboard in Resources */,
-				474392C7166CFCBD00CDBCF7 /* MainStoryboard_iPad.storyboard in Resources */,
 				47513CF0166E3E7300C0E52B /* tab_icon_profile.png in Resources */,
 				47D2D1DB16710A0A009CBDCE /* placeholder_t.gif in Resources */,
 				47D2D1DF1671FA57009CBDCE /* tab_icon_chat.png in Resources */,
@@ -336,6 +339,7 @@
 				47D2D1E81671FADC009CBDCE /* tab_icon_group.png in Resources */,
 				47D2D1E91671FADC009CBDCE /* 193-location-arrow.png in Resources */,
 				47D2D1EB1671FBA9009CBDCE /* placeholder_full.jpg in Resources */,
+				4742610D16758E9600919791 /* Austin Home, Texas, USA.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,14 +423,6 @@
 				474392C3166CFCBD00CDBCF7 /* en */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		474392C5166CFCBD00CDBCF7 /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				474392C6166CFCBD00CDBCF7 /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		474392DA166CFCBD00CDBCF7 /* InfoPlist.strings */ = {

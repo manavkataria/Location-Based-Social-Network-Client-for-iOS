@@ -7,9 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface FeedTableViewController : UITableViewController
+@interface FeedTableViewController : UITableViewController  <CLLocationManagerDelegate>
 
-@property (strong,nonatomic) NSArray *users;
+@property (strong, nonatomic) UILabel *latitude;
+@property (strong, nonatomic) UILabel *longitude;
+@property (strong, nonatomic) UILabel *altitude;
+@property (strong, nonatomic) UILabel *horizontalAccuracy;
+@property (strong, nonatomic) UILabel *verticalAccuracy;
+@property (strong, nonatomic) UILabel *distance;
+
+@property (strong, nonatomic) CLLocation *myLocation;
+@property (strong, nonatomic) CLLocation *startLocation;
+@property (strong, nonatomic) CLLocationManager *locationManager;
+
+-(CLLocationDistance)myDistanceFromLatitude:(CLLocationDegrees) latitude
+                                  longitude:(CLLocationDegrees) longitude;
+
+//- (IBAction)resetDistance:(id)sender;
+
+@property (strong, nonatomic) NSArray *users;
 
 @end

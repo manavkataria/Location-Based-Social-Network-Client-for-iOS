@@ -32,6 +32,13 @@
 {
     [super viewDidLoad];
     
+    // Set Location Manager
+    _locationManager = [[CLLocationManager alloc] init];
+    _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    _locationManager.delegate = self;
+    [_locationManager startUpdatingLocation];
+    _startLocation = nil;
+    
     [self fetchUsers];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -67,22 +74,37 @@
     // UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    // Configure the cell...
+    // Cell Style
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
+    // Name
     NSLog(@"UserProfile: %@",self.users[indexPath.row]);
     cell.textLabel.text = self.users[indexPath.row][@"name"];
     
+    // Image
+    [cell.imageView setImageWithURL:[NSURL URLWithString:self.users[indexPath.row][@"image"]] placeholderImage:[UIImage imageNamed:@"placeholder_t.gif"]];
+    
+    // Location
     if (![self.users[indexPath.row][@"location"] isKindOfClass:[NSNull class]]) {
         cell.detailTextLabel.text = self.users[indexPath.row][@"location"];
     } else {
         NSLog(@"Null Location: %@",self.users[indexPath.row][@"location"]);
         cell.detailTextLabel.text = @"";
     }
-    
-    [cell.imageView setImageWithURL:[NSURL URLWithString:self.users[indexPath.row][@"image"]] placeholderImage:[UIImage imageNamed:@"placeholder_t.gif"]];
+
+    // Distance from User
+    if ([self.users[indexPath.row][@"location"] isKindOfClass:[NSNull class]] ||
+        [self.users[indexPath.row][@"latitude"] isKindOfClass:[NSNull class]] ||
+        [self.users[indexPath.row][@"longitude"] isKindOfClass:[NSNull class]]) {
+        NSLog(@"Null Location/lat/long for user: %@", self.users[indexPath.row][@"name"]);
+    } else {
+        CLLocationDistance distance = [self myDistanceFromUserIndexPath:indexPath];
+        NSString *distanceStr = [NSString stringWithFormat:@"(%d km away) %@",
+                                 (int) (distance/1000), self.users[indexPath.row][@"location"]];
+        cell.detailTextLabel.text = distanceStr;
+    }
     
     return cell;
 }
@@ -134,7 +156,9 @@
     
     ProfileViewController *profileViewController = [[ProfileViewController alloc] init];
     
+    // Set Profile
     profileViewController.userProfile = self.users[indexPath.row];
+    profileViewController.userDistance = [self myDistanceFromUserIndexPath:indexPath];
     [profileViewController renderUserProfile];
 
     // Pass the selected object to the new view controller.
@@ -156,6 +180,86 @@
     }];
     
     [operation start];
+}
+
+/********************************************* LOCATION CONTROL *********************************************/
+/********************************************* LOCATION CONTROL *********************************************/
+/********************************************* LOCATION CONTROL *********************************************/
+
+-(void)resetDistance:(id)sender
+{
+    _startLocation = nil;
+}
+
+#pragma mark -
+#pragma mark CLLocationManagerDelegate
+
+-(void)locationManager:(CLLocationManager *)manager
+   didUpdateToLocation:(CLLocation *)newLocation
+          fromLocation:(CLLocation *)oldLocation
+{
+    // Debug
+    // NSLog(@"Location: %@", [newLocation description]);
+    
+    // Set Property
+    _myLocation = newLocation;
+
+    // Refresh Table
+    [self.tableView reloadData];
+    
+    NSString *accuracyString = [[NSString alloc]
+                                           initWithFormat:@"%+.3f",
+                                           newLocation.horizontalAccuracy];
+    //_horizontalAccuracy.text = currentHorizontalAccuracy;
+    
+    NSLog(@"Accuracy in Meters: %@",accuracyString);
+}
+
+-(CLLocationDistance)myDistanceFromUserIndexPath:(NSIndexPath *)indexPath
+{
+    if ([self.users[indexPath.row][@"latitude"] isKindOfClass:[NSNull class]] ||
+        [self.users[indexPath.row][@"latitude"] isKindOfClass:[NSNull class]]) {
+        NSLog(@"Warning: Latitude and Longitude Not Available for user: %@ ",self.users[indexPath.row][@"users"]);
+        return -1;
+    }
+         
+    CLLocationDegrees latitude = [self.users[indexPath.row][@"latitude"] doubleValue];
+    CLLocationDegrees longitude = [self.users[indexPath.row][@"longitude"] doubleValue];
+    
+    CLLocationDistance distance = [self myDistanceFromLatitude:latitude
+                                                     longitude:longitude];
+
+    return distance;
+}
+
+-(CLLocationDistance)myDistanceFromLatitude:(CLLocationDegrees) latitude
+                                  longitude:(CLLocationDegrees) longitude
+{
+    CLLocation *otherLocation = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
+    CLLocation *austinLocation = [[CLLocation alloc] initWithLatitude:30.2306 longitude:-97.834];
+    
+    if (self.myLocation == NULL) {
+        NSLog(@"myLocation is: NULL");
+    } else {
+        NSLog(@"myLocation is: %@", [self.myLocation description]);
+    }
+    
+    if (self.myLocation == NULL) {
+        NSLog(@"Distance from Austin (default): %f", [austinLocation distanceFromLocation:otherLocation]);
+        return [austinLocation distanceFromLocation:otherLocation];
+    } else {
+        NSLog(@"Distance from myLocation: %f", [self.myLocation distanceFromLocation:otherLocation]);
+        return [self.myLocation distanceFromLocation:otherLocation];
+    }
+    
+}
+
+-(void)locationManager:(CLLocationManager *)manager
+      didFailWithError:(NSError *)error
+{
+    NSLog(@"Error: %@", [error  description]);
+    NSLog(@"Are Location Services enabled on device?");
+    //NSLog(@"Error All: %@", error);
 }
 
 
