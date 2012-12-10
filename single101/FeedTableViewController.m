@@ -8,8 +8,12 @@
 
 #import "FeedTableViewController.h"
 #import "AFJSONRequestOperation.h"
+#import "AFHTTPClient.h"
+#import "AFNetworking.h"
 #import "UIImageView+AFNetworking.h"
 #import "ProfileViewController.h"
+
+#define BASE_URL    "http://talklocaldev.herokuapp.com/"
 
 @interface FeedTableViewController ()
 
@@ -40,8 +44,8 @@
     _startLocation = nil;
     
     [self fetchUsers];
-
-    // Uncomment the following line to preserve selection between presentations.
+    
+     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -168,9 +172,9 @@
 
 - (void)fetchUsers
 {
-    NSURL *url = [[NSURL alloc] initWithString:@"http://talklocaldev.herokuapp.com/users.json"];
+    NSURL *url = [[NSURL alloc] initWithString:@BASE_URL"users.json"];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    
+        
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         //NSLog(@"Fetched Feed JSON: %@",JSON);
         self.users = JSON;
@@ -198,7 +202,6 @@
    didUpdateToLocation:(CLLocation *)newLocation
           fromLocation:(CLLocation *)oldLocation
 {
-    // Debug
     // NSLog(@"Location: %@", [newLocation description]);
     
     // Set Property
@@ -206,7 +209,10 @@
 
     // Refresh Table
     [self.tableView reloadData];
-    
+
+    // Upload Location
+    [self uploadLocationCoordinates];
+
     NSString *accuracyString = [[NSString alloc]
                                            initWithFormat:@"%+.3f",
                                            newLocation.horizontalAccuracy];
@@ -262,5 +268,30 @@
     //NSLog(@"Error All: %@", error);
 }
 
+-(void)uploadLocationCoordinates
+{
+    NSURL *url = [NSURL URLWithString:@BASE_URL];
+    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:url];
+    [httpClient setParameterEncoding:AFJSONParameterEncoding];
+    
+    CLLocationDegrees latitude = self.myLocation.coordinate.latitude;
+    CLLocationDegrees longitude = self.myLocation.coordinate.longitude;
+    
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            [NSNumber numberWithDouble:latitude], @"latitude",
+                            [NSNumber numberWithDouble:longitude], @"longitude",
+                            nil];
+    
+    [httpClient putPath:@"users/5"
+             parameters:params
+                success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                    NSString *text = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+                    NSLog(@"PUT Response: %@", text);
+                    NSLog(@"Uploading Location Coordinates Successful!");
+                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    NSLog(@"PUT %@", [error localizedDescription]);
+                }
+     ];
+}
 
 @end
