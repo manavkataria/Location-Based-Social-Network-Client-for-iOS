@@ -13,4 +13,6 @@
 @property (weak, nonatomic) UIButton *authButton;
 - (void)authButtonAction:(UIButton *)sender;
 
+@property (strong, nonatomic) NSDictionary *me;
+
 @end

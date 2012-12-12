@@ -135,6 +135,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 - (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI {
     NSArray *permissions = [[NSArray alloc] initWithObjects:
                             @"email",
+                            @"user_location",
                             @"user_birthday",
                             @"user_likes",
                             nil];

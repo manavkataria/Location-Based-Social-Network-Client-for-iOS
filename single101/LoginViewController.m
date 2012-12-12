@@ -65,12 +65,89 @@
 - (void)sessionStateChanged:(NSNotification*)notification {
     if (FBSession.activeSession.isOpen) {
         [self.authButton setTitle:@"Logout from Facebook" forState:UIControlStateNormal];
+        [self loginSuccessful];
     } else {
         [self.authButton setTitle:@"Login with Facebook" forState:UIControlStateNormal];
     }
 }
 
-#warning returning void in place of IBAction as per FB Tutorial
+- (void)loginSuccessful
+{
+    // TODO: Replace with Feed ViewController
+    [self getUserDataFromFacebook];
+    
+}
+
+-(void) getUserDataFromFacebook
+{
+    // Log details about HTTP requests and response to the output pane in Xcode
+    [FBSettings setLoggingBehavior:[NSSet setWithObjects:
+                                    FBLoggingBehaviorFBRequests, nil]];
+    
+    // Request User Information
+    [FBRequestConnection
+     startForMeWithCompletionHandler:^(FBRequestConnection *connection,
+                                       id<FBGraphUser> user,
+                                       NSError *error) {
+         if (!error) {
+             self.me = (NSDictionary *) user;
+             NSLog(@"Me: %@",self.me);
+             
+             NSString *userInfo = @"";
+             
+             // Example: typed access (name)
+             // - no special permissions required
+             userInfo = [userInfo
+                         stringByAppendingString:
+                         [NSString stringWithFormat:@"Name: %@",
+                          user.name]];
+             
+             // Example: typed access, (birthday)
+             // - requires user_birthday permission
+             userInfo = [userInfo
+                         stringByAppendingString:
+                         [NSString stringWithFormat:@"Birthday: %@",
+                          user.birthday]];
+             
+             // Example: partially typed access, to location field,
+             // name key (location)
+             // - requires user_location permission
+             userInfo = [userInfo
+                         stringByAppendingString:
+                         [NSString stringWithFormat:@"Location: %@",
+                          [user.location objectForKey:@"name"]]];
+             
+             // Example: access via key (locale)
+             // - no special permissions required
+             userInfo = [userInfo
+                         stringByAppendingString:
+                         [NSString stringWithFormat:@"Locale: %@",
+                          [user objectForKey:@"locale"]]];
+             
+             // Example: access via key for array (languages)
+             // - requires user_likes permission
+             if ([user objectForKey:@"languages"]) {
+                 NSArray *languages = [user objectForKey:@"languages"];
+                 NSMutableArray *languageNames = [[NSMutableArray alloc] init];
+                 for (int i = 0; i < [languages count]; i++) {
+                     [languageNames addObject:[[languages
+                                                objectAtIndex:i]
+                                               objectForKey:@"name"]];
+                 }
+                 userInfo = [userInfo
+                             stringByAppendingString:
+                             [NSString stringWithFormat:@"Languages: %@",
+                              languageNames]];
+             }
+             
+             NSLog(@"UserInfo From Facebook: %@", userInfo);
+             // TODO: Display user info in Profile Page
+             // TODO: Push User info to Rails Backend Server
+         }
+     }];
+    
+}
+
 - (void)authButtonAction:(id)sender
 {
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
@@ -79,6 +156,7 @@
     // If the user is not authenticated, log in when the button is clicked.
     if (FBSession.activeSession.isOpen) {
         [appDelegate closeSession];
+        // TODO: Replace with Login ViewController
     } else {
         // The user has initiated a login, so call the openSession method
         // and show the login UX if necessary.
