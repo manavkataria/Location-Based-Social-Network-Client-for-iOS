@@ -282,6 +282,7 @@
                             [NSNumber numberWithDouble:longitude], @"longitude",
                             nil];
     
+#warning "Uploading Location Coordinates for User#5 (Manav Kataria) ONLY!"
     [httpClient putPath:@"users/5"
              parameters:params
                 success:^(AFHTTPRequestOperation *operation, id responseObject) {

@@ -59,7 +59,7 @@
 /* Begin PBXFileReference section */
 		4742610A1674981900919791 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4742610C16758E9600919791 /* Austin Home, Texas, USA.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Austin Home, Texas, USA.gpx"; sourceTree = "<group>"; };
-		474392A6166CFCBD00CDBCF7 /* TalkLocalDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkLocalDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		474392A6166CFCBD00CDBCF7 /* talklocaldev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = talklocaldev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		474392AA166CFCBD00CDBCF7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		474392AC166CFCBD00CDBCF7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		474392AE166CFCBD00CDBCF7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -73,7 +73,7 @@
 		474392BE166CFCBD00CDBCF7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		474392C0166CFCBD00CDBCF7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		474392C3166CFCBD00CDBCF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		474392D0166CFCBD00CDBCF7 /* single101Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = single101Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		474392D0166CFCBD00CDBCF7 /* talklocaltest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = talklocaltest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		474392D1166CFCBD00CDBCF7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		474392D9166CFCBD00CDBCF7 /* single101Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "single101Tests-Info.plist"; sourceTree = "<group>"; };
 		474392DB166CFCBD00CDBCF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -151,8 +151,8 @@
 		474392A7166CFCBD00CDBCF7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				474392A6166CFCBD00CDBCF7 /* TalkLocalDev.app */,
-				474392D0166CFCBD00CDBCF7 /* single101Tests.octest */,
+				474392A6166CFCBD00CDBCF7 /* talklocaldev.app */,
+				474392D0166CFCBD00CDBCF7 /* talklocaltest.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -257,9 +257,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		474392A5166CFCBC00CDBCF7 /* TalkLocalDev */ = {
+		474392A5166CFCBC00CDBCF7 /* talklocaldev */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 474392E2166CFCBD00CDBCF7 /* Build configuration list for PBXNativeTarget "TalkLocalDev" */;
+			buildConfigurationList = 474392E2166CFCBD00CDBCF7 /* Build configuration list for PBXNativeTarget "talklocaldev" */;
 			buildPhases = (
 				474392A2166CFCBC00CDBCF7 /* Sources */,
 				474392A3166CFCBC00CDBCF7 /* Frameworks */,
@@ -269,14 +269,14 @@
 			);
 			dependencies = (
 			);
-			name = TalkLocalDev;
+			name = talklocaldev;
 			productName = single101;
-			productReference = 474392A6166CFCBD00CDBCF7 /* TalkLocalDev.app */;
+			productReference = 474392A6166CFCBD00CDBCF7 /* talklocaldev.app */;
 			productType = "com.apple.product-type.application";
 		};
-		474392CF166CFCBD00CDBCF7 /* single101Tests */ = {
+		474392CF166CFCBD00CDBCF7 /* talklocaltest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 474392E5166CFCBD00CDBCF7 /* Build configuration list for PBXNativeTarget "single101Tests" */;
+			buildConfigurationList = 474392E5166CFCBD00CDBCF7 /* Build configuration list for PBXNativeTarget "talklocaltest" */;
 			buildPhases = (
 				474392CB166CFCBD00CDBCF7 /* Sources */,
 				474392CC166CFCBD00CDBCF7 /* Frameworks */,
@@ -288,9 +288,9 @@
 			dependencies = (
 				474392D6166CFCBD00CDBCF7 /* PBXTargetDependency */,
 			);
-			name = single101Tests;
+			name = talklocaltest;
 			productName = single101Tests;
-			productReference = 474392D0166CFCBD00CDBCF7 /* single101Tests.octest */;
+			productReference = 474392D0166CFCBD00CDBCF7 /* talklocaltest.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -314,8 +314,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				474392A5166CFCBC00CDBCF7 /* TalkLocalDev */,
-				474392CF166CFCBD00CDBCF7 /* single101Tests */,
+				474392A5166CFCBC00CDBCF7 /* talklocaldev */,
+				474392CF166CFCBD00CDBCF7 /* talklocaltest */,
 			);
 		};
 /* End PBXProject section */
@@ -403,7 +403,7 @@
 /* Begin PBXTargetDependency section */
 		474392D6166CFCBD00CDBCF7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 474392A5166CFCBC00CDBCF7 /* TalkLocalDev */;
+			target = 474392A5166CFCBC00CDBCF7 /* talklocaldev */;
 			targetProxy = 474392D5166CFCBD00CDBCF7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -445,6 +445,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -460,6 +461,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -474,7 +477,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -482,6 +486,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -492,11 +498,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "single101/single101-Prefix.pch";
 				INFOPLIST_FILE = "single101/single101-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -510,6 +519,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "single101/single101-Prefix.pch";
 				INFOPLIST_FILE = "single101/single101-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -522,6 +532,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/single101.app/single101";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -530,6 +541,7 @@
 				GCC_PREFIX_HEADER = "single101/single101-Prefix.pch";
 				INFOPLIST_FILE = "single101Tests/single101Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -539,6 +551,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/single101.app/single101";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -547,6 +560,7 @@
 				GCC_PREFIX_HEADER = "single101/single101-Prefix.pch";
 				INFOPLIST_FILE = "single101Tests/single101Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -564,7 +578,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		474392E2166CFCBD00CDBCF7 /* Build configuration list for PBXNativeTarget "TalkLocalDev" */ = {
+		474392E2166CFCBD00CDBCF7 /* Build configuration list for PBXNativeTarget "talklocaldev" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				474392E3166CFCBD00CDBCF7 /* Debug */,
@@ -573,7 +587,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		474392E5166CFCBD00CDBCF7 /* Build configuration list for PBXNativeTarget "single101Tests" */ = {
+		474392E5166CFCBD00CDBCF7 /* Build configuration list for PBXNativeTarget "talklocaltest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				474392E6166CFCBD00CDBCF7 /* Debug */,
