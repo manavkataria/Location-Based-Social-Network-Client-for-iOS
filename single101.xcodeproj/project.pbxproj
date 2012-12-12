@@ -14,6 +14,8 @@
 		470CC5BA16789B6C0052C6CC /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470CC5B716789B6C0052C6CC /* Accounts.framework */; };
 		470CC5BB16789B6C0052C6CC /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470CC5B816789B6C0052C6CC /* AdSupport.framework */; };
 		470CC5BC16789B6C0052C6CC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470CC5B916789B6C0052C6CC /* Social.framework */; };
+		470CC5BF1678A7BD0052C6CC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 470CC5BE1678A7BD0052C6CC /* LoginViewController.m */; };
+		470CC5C01678A7BD0052C6CC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 470CC5BE1678A7BD0052C6CC /* LoginViewController.m */; };
 		4742610B1674981900919791 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4742610A1674981900919791 /* CoreLocation.framework */; };
 		4742610D16758E9600919791 /* Austin Home, Texas, USA.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 4742610C16758E9600919791 /* Austin Home, Texas, USA.gpx */; };
 		474392AB166CFCBD00CDBCF7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474392AA166CFCBD00CDBCF7 /* UIKit.framework */; };
@@ -69,6 +71,8 @@
 		470CC5B716789B6C0052C6CC /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		470CC5B816789B6C0052C6CC /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		470CC5B916789B6C0052C6CC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		470CC5BD1678A7BD0052C6CC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		470CC5BE1678A7BD0052C6CC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		4742610A1674981900919791 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4742610C16758E9600919791 /* Austin Home, Texas, USA.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Austin Home, Texas, USA.gpx"; sourceTree = "<group>"; };
 		474392A6166CFCBD00CDBCF7 /* talklocaldev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = talklocaldev.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +200,8 @@
 			children = (
 				474392B9166CFCBD00CDBCF7 /* AppDelegate.h */,
 				474392BA166CFCBD00CDBCF7 /* AppDelegate.m */,
+				470CC5BD1678A7BD0052C6CC /* LoginViewController.h */,
+				470CC5BE1678A7BD0052C6CC /* LoginViewController.m */,
 				47D2D1BA167094FC009CBDCE /* FeedTableViewController.h */,
 				47D2D1BB167094FD009CBDCE /* FeedTableViewController.m */,
 				47513CE5166E39F900C0E52B /* ProfileViewController.h */,
@@ -411,6 +417,7 @@
 				47D2D1D71670FB20009CBDCE /* AFURLConnectionOperation.m in Sources */,
 				47D2D1D81670FB20009CBDCE /* AFXMLRequestOperation.m in Sources */,
 				47D2D1D91670FB20009CBDCE /* UIImageView+AFNetworking.m in Sources */,
+				470CC5BF1678A7BD0052C6CC /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				474392DF166CFCBD00CDBCF7 /* single101Tests.m in Sources */,
+				470CC5C01678A7BD0052C6CC /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
