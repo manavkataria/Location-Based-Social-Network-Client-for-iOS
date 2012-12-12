@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		470CC5B116789AA60052C6CC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470CC5B016789AA60052C6CC /* FacebookSDK.framework */; };
+		470CC5B216789AA60052C6CC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470CC5B016789AA60052C6CC /* FacebookSDK.framework */; };
+		470CC5B516789AE10052C6CC /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 470CC5B416789AE10052C6CC /* FacebookSDKResources.bundle */; };
+		470CC5B616789AE10052C6CC /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 470CC5B416789AE10052C6CC /* FacebookSDKResources.bundle */; };
+		470CC5BA16789B6C0052C6CC /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470CC5B716789B6C0052C6CC /* Accounts.framework */; };
+		470CC5BB16789B6C0052C6CC /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470CC5B816789B6C0052C6CC /* AdSupport.framework */; };
+		470CC5BC16789B6C0052C6CC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470CC5B916789B6C0052C6CC /* Social.framework */; };
 		4742610B1674981900919791 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4742610A1674981900919791 /* CoreLocation.framework */; };
 		4742610D16758E9600919791 /* Austin Home, Texas, USA.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 4742610C16758E9600919791 /* Austin Home, Texas, USA.gpx */; };
 		474392AB166CFCBD00CDBCF7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474392AA166CFCBD00CDBCF7 /* UIKit.framework */; };
@@ -57,6 +64,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		470CC5B016789AA60052C6CC /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		470CC5B416789AE10052C6CC /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = ../../Documents/FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle; sourceTree = "<group>"; };
+		470CC5B716789B6C0052C6CC /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		470CC5B816789B6C0052C6CC /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		470CC5B916789B6C0052C6CC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		4742610A1674981900919791 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4742610C16758E9600919791 /* Austin Home, Texas, USA.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Austin Home, Texas, USA.gpx"; sourceTree = "<group>"; };
 		474392A6166CFCBD00CDBCF7 /* talklocaldev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = talklocaldev.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,10 +130,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				470CC5BA16789B6C0052C6CC /* Accounts.framework in Frameworks */,
+				470CC5BB16789B6C0052C6CC /* AdSupport.framework in Frameworks */,
+				470CC5BC16789B6C0052C6CC /* Social.framework in Frameworks */,
 				4742610B1674981900919791 /* CoreLocation.framework in Frameworks */,
 				474392AB166CFCBD00CDBCF7 /* UIKit.framework in Frameworks */,
 				474392AD166CFCBD00CDBCF7 /* Foundation.framework in Frameworks */,
 				474392AF166CFCBD00CDBCF7 /* CoreGraphics.framework in Frameworks */,
+				470CC5B116789AA60052C6CC /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +148,7 @@
 				474392D2166CFCBD00CDBCF7 /* SenTestingKit.framework in Frameworks */,
 				474392D3166CFCBD00CDBCF7 /* UIKit.framework in Frameworks */,
 				474392D4166CFCBD00CDBCF7 /* Foundation.framework in Frameworks */,
+				470CC5B216789AA60052C6CC /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +177,11 @@
 		474392A9166CFCBD00CDBCF7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				470CC5B716789B6C0052C6CC /* Accounts.framework */,
+				470CC5B816789B6C0052C6CC /* AdSupport.framework */,
+				470CC5B916789B6C0052C6CC /* Social.framework */,
+				470CC5B416789AE10052C6CC /* FacebookSDKResources.bundle */,
+				470CC5B016789AA60052C6CC /* FacebookSDK.framework */,
 				4742610A1674981900919791 /* CoreLocation.framework */,
 				474392AA166CFCBD00CDBCF7 /* UIKit.framework */,
 				474392AC166CFCBD00CDBCF7 /* Foundation.framework */,
@@ -340,6 +362,7 @@
 				47D2D1E91671FADC009CBDCE /* 193-location-arrow.png in Resources */,
 				47D2D1EB1671FBA9009CBDCE /* placeholder_full.jpg in Resources */,
 				4742610D16758E9600919791 /* Austin Home, Texas, USA.gpx in Resources */,
+				470CC5B516789AE10052C6CC /* FacebookSDKResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				474392DC166CFCBD00CDBCF7 /* InfoPlist.strings in Resources */,
+				470CC5B616789AE10052C6CC /* FacebookSDKResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,10 +523,15 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Documents/FacebookSDK\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "single101/single101-Prefix.pch";
 				INFOPLIST_FILE = "single101/single101-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -516,10 +545,15 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Documents/FacebookSDK\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "single101/single101-Prefix.pch";
 				INFOPLIST_FILE = "single101/single101-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -536,6 +570,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/../../Documents/FacebookSDK\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "single101/single101-Prefix.pch";
@@ -555,6 +590,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/../../Documents/FacebookSDK\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "single101/single101-Prefix.pch";
