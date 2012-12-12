@@ -105,9 +105,8 @@ void uncaughtExceptionHandler(NSException *exception) {
             }
             break;
         case FBSessionStateClosed:
-            NSLog(@"FacebookSDK: User Facebook Session Authentication State CLOSED!");
         case FBSessionStateClosedLoginFailed:
-            NSLog(@"FacebookSDK: User Facebook Session FAILED Authentication!");
+            NSLog(@"FacebookSDK: User Facebook Session Authentication State FAILED or CLOSED!");
             [FBSession.activeSession closeAndClearTokenInformation];
             break;
         default:
@@ -136,6 +135,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 - (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI {
     NSArray *permissions = [[NSArray alloc] initWithObjects:
                             @"email",
+                            @"user_birthday",
                             @"user_likes",
                             nil];
     return [FBSession openActiveSessionWithReadPermissions:permissions
@@ -159,6 +159,11 @@ void uncaughtExceptionHandler(NSException *exception) {
          annotation:(id)annotation {
     // attempt to extract a token from the url
     return [FBSession.activeSession handleOpenURL:url];
+}
+
+
+- (void) closeSession {
+    [FBSession.activeSession closeAndClearTokenInformation];
 }
 
 @end
